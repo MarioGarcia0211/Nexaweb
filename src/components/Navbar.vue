@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-white fs-4" href="#">NEXAWEB</a>
+      <router-link class="navbar-brand d-flex align-items-center gap-2" to="/">
+        <img src="../assets/images/logo.png" alt="Logo" class="logo-navbar"
+      </router-link>
 
       <!-- Botón hamburguesa solo visible en pantallas pequeñas -->
       <button
@@ -10,6 +12,7 @@
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar"
+        data-bs-backdrop="false"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -121,6 +124,30 @@
 .navbar {
   min-height: 70px;
   background-color: black;
+}
+
+.navbar-toggler {
+  background-color: rgba(240, 74, 92, 0.9);
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) brightness(1.5);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navbar-toggler:hover {
+  background-color: #ff6a7c;
+  transform: scale(1.05);
+}
+
+.logo-navbar {
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 .custom-link {

@@ -50,9 +50,10 @@
 
 <style scoped>
 .nosotros-section {
-  background-color: #411e1e;
-  padding-top: 0.9rem;
-  padding-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 82vh;
 }
 
 .titulo-seccion {

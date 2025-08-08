@@ -39,14 +39,86 @@
           </div>
         </div>
 
-        <!-- Columna derecha -->
+        <!-- Columna derecha con carousel -->
         <div class="col-md-6 text-center">
-          <div class="bg-dark bg-opacity-50 rounded-5 shadow-lg">
-            <img
-              src="../assets/images/002.gif"
-              alt="App demo"
-              class="img-fluid rounded-5 shadow-lg"
-            />
+          <div class="bg-dark bg-opacity-50 rounded-5 shadow-lg p-3">
+            <div
+              id="heroCarousel"
+              class="carousel slide carousel-fade rounded-5 shadow-lg overflow-hidden"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#heroCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#heroCarousel"
+                  data-bs-slide-to="1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#heroCarousel"
+                  data-bs-slide-to="2"
+                ></button>
+              </div>
+
+              <!-- Imágenes -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="../assets/images/diseno-web.jpg"
+                    class="d-block w-100"
+                    alt="App demo 1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/images/marketing-digital.jpg"
+                    class="d-block w-100"
+                    alt="App demo 2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/images/asesoria.webp"
+                    class="d-block w-100"
+                    alt="App demo 3"
+                  />
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon custom-control"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon custom-control"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -70,10 +142,10 @@ const irAServicios = () => {
 
 <style scoped>
 .hero-section {
-  background-color: #4e2727;
-  min-height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 82vh;
 }
 
 .text-acento {
@@ -117,10 +189,54 @@ const irAServicios = () => {
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #ffffff33;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.4rem 1rem;
   border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
   font-size: 0.85rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.tech-badge:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.carousel-inner img {
+  border-radius: 1.2rem;
+  object-fit: cover;
+  height: 350px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.03);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #f04a5c;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.custom-control {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>

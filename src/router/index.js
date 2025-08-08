@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Nosotros from "../views/Nosotros.vue";
 import Contactos from "../views/Contactos.vue";
 import Servicios from "../views/Servicios.vue";
+import Galeria from "../views/Galeria.vue";
 
 // Definición de rutas
 const routes = [
@@ -10,6 +11,11 @@ const routes = [
   { path: "/nosotros", component: Nosotros },
   { path: "/servicios", component: Servicios },
   { path: "/contacto", component: Contactos },
+  {
+    path: "/galeria/:categoria",
+    name: "galeria",
+    component: Galeria,
+  },
 ];
 
 // Crear el router
